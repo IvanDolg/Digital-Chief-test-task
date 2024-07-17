@@ -1,22 +1,19 @@
 package com.digital_chief.test_task.dto;
 
-import com.digital_chief.test_task.entity.Role;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import java.util.HashSet;
-import java.util.Set;
-import java.util.UUID;
+import lombok.ToString;
 
 @Schema(
-        description = "Response user dto model information"
+        description = "Response login user dto model information"
 )
 @Data
-@AllArgsConstructor
+@ToString
 @NoArgsConstructor
-public class UserDto {
+@AllArgsConstructor
+public class LoginUserDto {
 
     @Schema(
             description = "Unique identifier of the user"
@@ -32,14 +29,4 @@ public class UserDto {
             description = "Password of the user"
     )
     private String password;
-
-    @Schema(
-            description = "Email of the user"
-    )
-    private String email;
-
-    @Schema(
-            description = "Roles assigned to the user"
-    )
-    private Set<Role> roles = new HashSet<>();
 }
